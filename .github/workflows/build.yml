@@ -1,0 +1,38 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # macOS 26 SDK: includes the Ask Omni tool (FoundationModels).
+          - runner: macos-26
+          # macOS 15 SDK: verifies the app still builds without FoundationModels.
+          - runner: macos-15
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Toolchain
+        run: |
+          sw_vers
+          xcodebuild -version
+          swift --version
+      - name: Unit tests
+        run: swift test
+      - name: Build app bundle
+        run: ./scripts/build-app.sh
+      - name: Zip
+        run: ditto -c -k --keepParent build/Overhang.app build/Overhang.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Overhang-${{ matrix.runner }}
+          path: build/Overhang.zip
+          retention-days: 14

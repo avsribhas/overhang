@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>Overhang</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.avsribhas.overhang</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Overhang</string>
+	<key>CFBundleDisplayName</key>
+	<string>Overhang</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>14.0</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Overhang controls Music and Spotify and reads the current track so it can show Now Playing in the notch.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Overhang shows a live camera preview when you open the Mirror tool. Nothing is recorded.</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>Overhang shows your upcoming events in the Calendar tool.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Overhang shows your upcoming events in the Calendar tool.</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Personal project. Portions adapted from NotchDrop (MIT).</string>
+</dict>
+</plist>
